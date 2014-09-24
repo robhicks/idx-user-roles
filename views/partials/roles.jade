@@ -1,0 +1,63 @@
+#main
+    #error(data-ng-if="showError").alert.alert-danger An error has occured. Is your sessionid good? {{error}}
+    #data(data-ng-if="view.showData").panel.panel-default
+        .panel-heading
+            h4 Users and Roles
+        .panel-body
+            table.table.table-hover.table-condensed
+                thead
+                    tr
+                        th Name
+                        th Email
+                        th Username
+                        th V1 ID
+                        th V2 UUID
+                        th Roles
+                tbody
+                    tr(data-ng-repeat="user in view.users")
+                        td {{user.displayName}}
+                        td {{user.email}}
+                        td {{user.username}}
+                        td {{user.id}}
+                        td {{user.uuid}}
+                        td {{user.roles}}
+            button(data-ng-click="view.showData=false").btn.btn-lg Back to Query View
+
+
+    #form(data-ng-if="!view.showData").panel.panel-default
+        .panel-heading
+            h4 User Role Manager
+        .panel-body
+            form(name="role_form" novalidate)
+                .form-group
+                    label Session ID
+                    input(type="text", data-ng-model="model.user.sessionId").form-control
+                .form-group
+                    label Set or Add User Roles
+                    div.checkbox(data-ng-repeat="role in model.roles")
+                        label
+                            input(type='checkbox', data-ng-model='role.selected')
+                            | {{role.name}} - {{role.id}}
+
+                .row
+                    .col.col-lg-12
+                        h4 Mix Usernames and Emails. Don't provide a username and email for the same user.
+                .row
+                    .col.col-lg-6
+                        .form-group
+                            label Usernames (one per line, no quotes, spaces, etc.)
+                            textarea(data-ng-model="model.usernames", rows="5").form-control
+
+                    .col.col-lg-6
+                        .form-group
+                            label Email (one per line, no quotes, spaces, etc.)
+                            textarea(data-ng-model="model.emails", rows="5").form-control
+
+                button(data-ng-click="clearForm()", data-ng-disabled="role-form.$invalid").btn.btn-lg Clear Form
+                | &#160; &#160;
+                button(data-ng-click="setRoles()", data-ng-disabled="role-form.$invalid").btn.btn-primary.btn-lg Set Role(s)
+                | &#160; &#160;
+                button(data-ng-click="addRoles()", data-ng-disabled="role-form.$invalid").btn.btn-primary.btn-lg Add Role(s)
+                | &#160; &#160;
+                button(data-ng-click="checkAccountsAndRoles()", data-ng-disabled="role_form.$invalid").btn.btn-primary.btn-lg Check Account(s) And Role(s)
+

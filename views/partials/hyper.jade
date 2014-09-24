@@ -1,0 +1,16 @@
+#main
+    #auth.panel.panel-default
+        .panel-heading
+            h4 Hypermedia API Search
+        .panel-body
+            form(name="search_form" novalidate)
+                .form-group
+                    label Session ID
+                    input(type="text", data-ng-model="HC.sessionId", required).form-control
+                .form-group
+                    label Search Term(s)
+                    input(type="text", data-ng-model="HC.searchTerms", required).form-control
+
+                button(data-ng-click="HC.search()", data-ng-disabled="search_form.$invalid").btn.btn-primary.btn-lg Begin Searching
+
+

@@ -1,0 +1,27 @@
+{
+  "name": "idx-reviewer-role",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./app.js",
+  "dependencies": {
+    "body-parser": "~1.0.0",
+    "cookie-parser": "~1.0.1",
+    "debug": "~0.7.4",
+    "express": "~4.2.0",
+    "httpinvoke": "^1.1.5",
+    "jade": "~1.3.0",
+    "lodash": "^2.4.1",
+    "morgan": "~1.0.0",
+    "q": "^1.0.1",
+    "request": "^2.36.0",
+    "static-favicon": "~1.0.0",
+    "when": "^3.2.3",
+    "xml2js": "^0.4.4"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.4.4"
+  },
+  "scripts": {}
+}

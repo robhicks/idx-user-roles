@@ -1,0 +1,19 @@
+doctype html
+html(data-ng-app="App")
+    head
+        title= title
+        link(rel='stylesheet', href='/components/bootstrap-css/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+    body(data-ng-cloak)
+        block content
+
+    script(type='text/javascript', src='/components/angular/angular.js')
+    script(type='text/javascript', src='/components/angular-ui-router/release/angular-ui-router.js')
+    script(type='text/javascript', src='/javascripts/init.js')
+    script(type='text/javascript', src='/javascripts/auth.js')
+    script(type='text/javascript', src='/javascripts/roles.js')
+    script(type='text/javascript', src='/javascripts/users.js')
+    script(type='text/javascript', src='/javascripts/spinnerInterceptorService.js')
+    script(type='text/javascript', src='/javascripts/spinner.js')
+    script(type='text/javascript', src='/javascripts/services.js')
+    script(type='text/javascript', src='/javascripts/hyper.js')

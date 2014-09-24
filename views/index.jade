@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    .spinner.hide(data-spinner)
+    .navbar.navbar-default
+        .container-fluid
+            .navbar-header
+                button(type="button").navbar-toggle
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand Idx V1 User Manager
+            .collapse.navbar-collapse
+                ul.nav.navbar-nav
+                    //li(ui-sref-active="active")
+                        a(ui-sref="auth") Auth Manager
+                    li(ui-sref-active="active")
+                        a(ui-sref="roles") Role Manager
+                    //li(ui-sref-active="active")
+                    //    a(ui-sref="projects") Projects & Batches
+                    //li(ui-sref-active="active")
+                        a(ui-sref="users") Beta Users
+                    //li(ui-sref-active="active")
+                        a(ui-sref="hyper") Hypermedia Searcher
+
+    .container-fluid
+        <div ui-view></div>
